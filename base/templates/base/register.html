@@ -1,0 +1,28 @@
+{% extends "base/main.html" %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="checkbox" id="check" name="check">
+    <label for="check">I agree to the <a href="{% url 'terms' %}"> terms and conditions</a></label>
+        <input class="button" type="submit" value="register">
+    </form>
+    
+    <p>Already have an account? <a href="{% url 'login' %}">Sign in here</a></p>
+
+    
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

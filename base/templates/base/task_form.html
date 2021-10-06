@@ -1,0 +1,21 @@
+{% extends "base/main.html" %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Back</a>
+
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        <!--security token, protects the site from cross site attacks-->
+        {% csrf_token %}
+        <!--django form object, automatically takes the form fields from the task model in models.py -->
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+{% endblock content %}
